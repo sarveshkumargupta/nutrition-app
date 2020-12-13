@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+
+        {% block icon %}
+            <!-- Font Awesome ICON -->
+            {{ fontawesome_html() }}
+        {% endblock %}
+
+        <title>Meal Analysis</title>
+        {% endblock %}
+    </head>
+    <body>
+
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-success mt-4">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><span class="fas fa-seedling"></span> Meal Analysis</a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="container p-4">
+            {% block content %}{% endblock %}
+        </div>
+
+        {% block scripts %}
+            <!-- Optional JavaScript -->
+            {{ bootstrap.load_js() }}
+        {% endblock %}
+    </body>
+</html>

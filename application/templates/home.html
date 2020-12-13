@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% from 'bootstrap/form.html' import render_form_row %}
+
+{% block content %}
+
+    <form method="post">
+    {{ form.csrf_token }}
+    {{ render_form_row([form.quantity, form.measure, form.food],
+    col_map={'quantity': 'col-md-3', 'measure': 'col-md-4', 'food': 'col-md-5'}) }}
+
+    <div class="text-center">
+        {{ render_form_row([form.submit]) }}
+    </div>
+    </form>
+
+    {{ result }}
+
+{% endblock %}
+
